@@ -1,23 +1,46 @@
 #include<stdio.h>
 int input();
-void add(int a, int b, int *sum);
-void output(int a, int b, int sum);
+int compare(int a, int b, int c);
+void output(int a, int b, int c, int largest);
 int main(){
-  int a, b,sum;
-  printf("enter two no's:");
-  a=input();
-  b=input();
-  add(a, b, &sum);
-  output(a, b ,sum);
+  int a, b, c, largest;
+  printf("Enter three no's : ");
+  a = input();
+  b = input();
+  c = input();
+  largest = compare(a, b, c);
+  output(a, b, c, largest);
 }
 int input(){
   int a;
   if(scanf("%d", &a))
   return a;
 }
-void add(int a, int b, int *sum){
-  *sum = a + b;
+int compare(int a, int b, int c){
+  if (a > b && a > c){
+   return a;
+  }
+  else if (b > a && b > c){
+    return b;
+  }
+  else if (c > a && c > b){
+    return c;
+  }
+  else {
+    printf("invalid input");
+  }
 }
-void output(int a, int b, int sum){
-  printf("The sum of %d and %d is %d\n",a, b, sum);
+void output(int a, int b, int c, int largest){
+  if (largest == a){
+    printf("The largest of %d, %d and %d is %d\n", a, b, c, largest);
+  }
+  else if(largest == b){
+    printf("The largest of %d, %d and %d is %d\n", a, b, c, largest);
+  }
+  else if (largest == c){
+    printf("The largest of %d, %d and %d is %d\n", a, b, c, largest);
+  }
+  else{
+    printf("sorry, wrong input try again.\n");
+  }
 } 
