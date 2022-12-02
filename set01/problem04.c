@@ -12,7 +12,7 @@ int main(){
 }
 int input(){
   int a;
-  scanf("%d", &a);
+  if(scanf("%d", &a))
   return a;
 }
 int add(int a, int b){

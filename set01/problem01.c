@@ -2,6 +2,6 @@
 int main(){
  char name[10];
   printf("enter your name: ");
-  scanf("%s", name);
+  if(scanf("%s", name))
   printf("My name is %s\n", name);
 }
