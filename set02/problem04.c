@@ -1,38 +1,43 @@
 #include<stdio.h>
-int input_side();
-int check_scalene(int a, int b, int c);
-void output(int a, int b, int c, int isscalene);
+int input_array_size();
+void input_array(int n, int a[n]);
+int sum_composite_numbers(int n, int a[n]);
+void output(int sum);
 int main(){
-  int a, b, c, isscalene;
-  printf("enter the length of the sides: \n");
-  a = input_side();
-  b = input_side();
-  c = input_side();
-  isscalene = check_scalene(a,b,c);
-  output(a,b,c,isscalene);
+  int n, a[n], sum;
+  n = input_array_size();
+  input_array(n, &a[n]);
+  sum = sum_composite_numbers(n, &a[n]);
+  output(sum);
 }
-int input_side(){
-  int a;
-  scanf("%d",&a);
-  return a;
+int input_array_size(){
+  int n;
+  printf("enter the size of the array: ");
+  if(scanf("%d", &n));
+  return n;
 }
-int check_scalene(int a, int b, int c){
-  int isscalene;
-  if(a == b && b==c){
-    return isscalene; 
-  }
-  if(a==b || a==c || b==c){
-    return isscalene;
-  }
-  if(a != b && b!=c && a!= c){
-    return isscalene;
-  }
+void input_array(int n, int a[n]){
+  int i;
+  printf("Enter the elements for the array: ");
+  for(i=0; i<n;i++){
+   if(scanf("%d", &a[i]));
+    }
 }
-void output(int a, int b, int c, int isscalene){
-  if(a != b && b!=c && a!= c){
-    printf("The triangle with sides %d, %d and %d is scalene\n", a, b, c);
-  }
-  else{
-    printf("The triangle with sides %d, %d and %d is not scalene\n", a, b, c);
-  }
+int sum_composite_numbers(int n, int a[n])
+{
+  int i,isprime=0,sum=0;
+  for(i=1;i<n;i++)
+     {
+     for(int counter = 2; counter<= a[i]/2; counter++){
+        if((a[i]%counter) == 0){
+          isprime=1;}
+     }
+      if(isprime==1){
+        sum = sum+a[i];
+      } 
+     } 
+  return sum;
+}
+void output(int sum){
+  printf("sum is %d: \n",sum);
 }
