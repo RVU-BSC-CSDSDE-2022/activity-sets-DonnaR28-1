@@ -1,7 +1,8 @@
 #include<stdio.h>
 int main(){
- char name[10];
-  printf("enter your name: ");
+  char name[10];
+  printf("Enter your name:");
   if(scanf("%s", name))
-  printf("My name is %s\n", name);
+  printf("Hello %s Welcome to Replit\n", name);
+  return 0;
 }
