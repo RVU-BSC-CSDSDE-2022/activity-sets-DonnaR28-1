@@ -1,5 +1,5 @@
 #include<stdio.h> //take contents of stdio.h file and put it in the output file 
-int input();
+int input(); //function prototype ==> to check whether the function call passes the right number of arguments and type of arguments.
 int compare(int a, int b, int c);
 void output(int a, int b, int c, int largest);
 int main(){
