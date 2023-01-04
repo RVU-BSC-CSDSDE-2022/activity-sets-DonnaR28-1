@@ -11,9 +11,9 @@ int main(){
 }
 void input_two_strings(char *string1, char *string2){
   printf("Enter the first string: ");
-  scanf("%s", string1);
+  if(scanf("%s", string1));
   printf("Enter the second string: ");
-  scanf("%s", string2);
+  if(scanf("%s", string2));
 }
 int stringcompare(char *string1, char *string2){
   int result=0, i=0, flag=0;
@@ -47,7 +47,7 @@ int stringcompare(char *string1, char *string2){
 }
 void output(char *string1, char *string2, int result){
  if(result==0)
-    printf("The strings are  equal\n");
+    printf("The strings are equal\n");
   if(result==1)
     printf("%s is greater\n", string1);
   if(result==2)
