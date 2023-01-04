@@ -41,7 +41,8 @@ int stringcompare(char *string1, char *string2){
  {
      if(string1[i]>string2[i])
        return 1;
-  else return 2;
+     else 
+       return 2;
  }
 }
 void output(char *string1, char *string2, int result){
