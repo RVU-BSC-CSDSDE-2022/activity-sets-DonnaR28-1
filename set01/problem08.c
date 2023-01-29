@@ -13,14 +13,14 @@ int main(){
 }
 int input_array_size(){
     int n;
-    scanf("%d",&n);
+    if(scanf("%d",&n));
     return n;
 }
 void input_array(int n, int a[n]){
   int i;
   printf("Input the array: \n");
   for(i=0; i<n; i++){
-    scanf("%d", &a[i]);
+    if(scanf("%d", &a[i]));
     }
 }
 int sum_n_array(int n, int a[n]){
@@ -32,8 +32,8 @@ int sum_n_array(int n, int a[n]){
 }
 void output(int n, int a[n],int sum){
   printf("The sum of the array ");
-  for(int i=0; i<n;i++){
-    printf("%d+", a[i]);
+  for(int i=0; i<n-1;i++){
+    printf("%d + ", a[i]);
   }
-  printf("is %d\n", sum);
-    }
+  printf("%d is %d\n", a[n-1],sum);
+}
