@@ -1,53 +1,45 @@
 #include<stdio.h>
 typedef struct point {
-    float start_end_x, start_end_y;
+    float x,y;
 } Point;
 
-typedef struct line {
-    Point p;
-    float distance;
-} Line;
 
 typedef struct polygon {
     int sides;
-    Line l[100];
+    point p[100];
     float perimeter;
 } Polygon;
 
 int input_n();
-Line input_line(int n);
-void input_n_lines(int n, Line *l);
+Point input_point(int n);
 int input_polygon(Polygon *p);
 float find_distance(Point a, Point b);
-void find_n_distance(int n, Line *l);
 void find_perimeter(Polygon* p);
 void output(Polygon p);
-
 int main(){
-  int n;Line l;Polygon p;
-  input_n_lines(n, &l);
   
   return 0;
 }
 int input_n(){
   int n;
   printf("Enter the number of sides of the polygon: ");
-  if(scanf("%f",&n));
+  if(scanf("%d", &n));
   return n;
 }
-Line input_line(int n){
-  Line l;
-  for(int i=0;i<n;i++){
-    printf("Enter the coordinates of point %d (x,y):",n);
-    if(scanf("%d %d",&l.p.start_end_x,&l.p.start_end_x));
+Point input_point(int n){
+  Point p;
+  for(int i=0; i<n;i++){
+    printf("Enter the coordinates of point %d (x, y)",i);
+    if(scanf("%d %d",&p.x,&p.y));
   }
-  return l;
-}
-void input_n_lines(int n, Line *l){
-  for(int i=0;i<n;i++){
-    *l = input_line(n);
-  }
+  return p;
 }
 int input_polygon(Polygon *p){
-  
+  p->sides = input_point(n);
+}
+float find_distance(Point a, Point b){
+  return sqrt((b.x - a.x)*(b.x - a.x)+(b.y-a.y)*(b.y-a.y));
+}
+void find_perimeter(Polygon *p){
+  p
 }
