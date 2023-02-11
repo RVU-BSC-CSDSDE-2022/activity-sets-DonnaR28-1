@@ -4,10 +4,11 @@ void input_array(int n, int a[n]);
 int sum_composite_numbers(int n, int a[n]);
 void output(int sum);
 int main(){
-  int n, a[n], sum;
+  int n, sum;
   n = input_array_size();
-  input_array(n, &a[n]);
-  sum = sum_composite_numbers(n, &a[n]);
+  int a[n];
+  input_array(n, a);
+  sum = sum_composite_numbers(n, a);
   output(sum);
 }
 int input_array_size(){
@@ -25,20 +26,20 @@ void input_array(int n, int a[n]){
 }
 int sum_composite_numbers(int n, int a[n])
 {
-  int i,isprime=0,sum=0;
-  for(i=1;i<n;i++)
+  int i,sum=0;
+  for(i=0;i<n;i++)
      {
-     for(int counter = 2; counter<= a[i]/2; counter++){
-        if((a[i]%counter) == 0){
-          isprime=1;}
+     for(int j = 2; j< a[i]; j++){
+        if((a[i]%j) == 0){
+          sum = sum+a[i];
+          break;
+          }
+        } 
+      
      }
-      if(isprime==1){
-        sum = sum+a[i];
-      } 
-     } 
   return sum;
 }
 void output(int sum){
-  printf("sum is %d: \n",sum);
+  printf("sum is %d \n",sum);
 }
 

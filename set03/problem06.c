@@ -17,20 +17,22 @@ void input_string(char* a, char* b){
   if(scanf("%s", b));
 }
 int sub_str_index(char* string, char* substring){
-  int index;
-  for(int i=0; string[i] != '\0'; i++){
-    index = -1;
-    for(int j = 0; substring[j] != '\0'; j++){
-      if(string[i+j] != substring[j]){
-        index = -1;
-        break;
+  int i=0,j=0;
+  while (string[i]!='\0' ){
+  
+    if (string[i+j]==substring[j]){
+      
+      j++;
+      if(substring[j]=='\0'){
+        return i;
       }
-      index = i;
     }
-    if (index != -1)
-      break;
+    else{
+      j=0;
+      i++;
+    }
   }
-  return index;
+  return -1;
 }
 void output(char *string, char *substring, int index){
   printf("The index of '%s' in '%s' is %d\n", substring, string, index);

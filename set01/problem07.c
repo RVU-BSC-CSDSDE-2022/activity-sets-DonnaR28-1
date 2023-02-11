@@ -15,7 +15,7 @@ int input_n(){
   return n;
 }
 int sum_n_nos(int n){
-  int i, sum;
+  int i, sum=0;
   for(int i = 1; i <= n; i++){
     sum += i;
   }

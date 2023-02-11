@@ -8,7 +8,7 @@ int main(){
   b = input();
   gcd = find_gcd(a,b);
   output(a,b,gcd);
-  return 0;
+   return 0;
 }
 int input(){
   int a;
